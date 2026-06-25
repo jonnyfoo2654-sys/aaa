@@ -1,0 +1,41 @@
+name: Build AutoCAD QTO Plugin
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'
+
+    - name: Restore Packages
+      run: |
+        dotnet restore "AutoCAD-QTO-Plugin-Extracted-Source/AutoCAD-QTO-Plugin.sln"
+
+    - name: Build Solution
+      run: |
+        dotnet build "AutoCAD-QTO-Plugin-Extracted-Source/AutoCAD-QTO-Plugin.sln" `
+          --configuration Release `
+          --no-restore
+
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: AutoCAD-QTO-Plugin
+        path: |
+          **/bin/Release/**
