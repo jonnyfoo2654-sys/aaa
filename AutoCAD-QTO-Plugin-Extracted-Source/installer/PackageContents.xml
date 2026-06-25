@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  AutoCAD Bundle Package Manifest
+  Place this file at: QTO.bundle/PackageContents.xml
+  Copy the DLLs to:   QTO.bundle/Contents/
+-->
+<ApplicationPackage SchemaVersion="1.0" ProductCode="{QTO-PLUGIN-2024}"
+                    Name="QTO - Quantity Takeoff Plugin"
+                    AppVersion="1.0.0"
+                    Publisher="Your Organisation"
+                    Icon="./Resources/qto_icon.png"
+                    HelpFile="./Docs/UserManual.pdf"
+                    Description="Professional AutoCAD Quantity Takeoff and BOQ Generator">
+
+  <CompanyDetails Name="Your Organisation"
+                  Url="https://github.com/your-org/AutoCAD-QTO-Plugin"
+                  Email="support@yourorg.com"/>
+
+  <RuntimeRequirements OS="Win64" Platform="AutoCAD" SeriesMin="R24" SeriesMax="*"/>
+
+  <Components>
+    <RuntimeRequirements OS="Win64" Platform="AutoCAD" SeriesMin="R24"/>
+    <ComponentEntry AppName="QTO Plugin"
+                    ModuleName="./Contents/QTO.Plugin.dll"
+                    AppDescription="Quantity Takeoff Plugin for AutoCAD"
+                    LoadOnCommandInvocation="false"
+                    LoadOnAutoCADStartup="true">
+    </ComponentEntry>
+  </Components>
+
+</ApplicationPackage>

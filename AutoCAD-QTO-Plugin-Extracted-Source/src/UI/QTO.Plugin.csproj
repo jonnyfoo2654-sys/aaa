@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <AssemblyName>QTO.Plugin</AssemblyName>
+    <RootNamespace>QTO.Plugin</RootNamespace>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <Platforms>x64</Platforms>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <Description>AutoCAD Quantity Takeoff Plugin</Description>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\QTO.Core.csproj" />
+    <ProjectReference Include="..\DataExtraction\QTO.DataExtraction.csproj" />
+    <ProjectReference Include="..\QuantityEngine\QTO.QuantityEngine.csproj" />
+    <ProjectReference Include="..\TextRecognition\QTO.TextRecognition.csproj" />
+    <ProjectReference Include="..\ExcelExport\QTO.ExcelExport.csproj" />
+    <!-- AutoCAD References -->
+    <Reference Include="accoremgd">
+      <HintPath>$(AcadDir)\accoremgd.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="acdbmgd">
+      <HintPath>$(AcadDir)\acdbmgd.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="acmgd">
+      <HintPath>$(AcadDir)\acmgd.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.3.2" />
+  </ItemGroup>
+</Project>

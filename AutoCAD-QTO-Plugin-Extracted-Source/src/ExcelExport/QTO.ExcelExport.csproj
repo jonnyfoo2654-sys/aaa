@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <AssemblyName>QTO.ExcelExport</AssemblyName>
+    <RootNamespace>QTO.ExcelExport</RootNamespace>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Platforms>x64</Platforms>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\QTO.Core.csproj" />
+    <PackageReference Include="EPPlus" Version="7.3.2" />
+  </ItemGroup>
+</Project>

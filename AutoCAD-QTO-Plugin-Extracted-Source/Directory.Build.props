@@ -1,0 +1,16 @@
+<Project>
+  <PropertyGroup>
+    <!-- Default AutoCAD installation directory.
+         Override by passing /p:AcadDir="C:\Program Files\Autodesk\AutoCAD 2025" -->
+    <AcadDir Condition="'$(AcadDir)' == ''">C:\Program Files\Autodesk\AutoCAD 2025</AcadDir>
+
+    <!-- Suppress warnings about AutoCAD DLLs not being found in CI -->
+    <NoWarn>$(NoWarn);MSB3245</NoWarn>
+
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <Authors>Your Organisation</Authors>
+    <Copyright>Copyright © 2024</Copyright>
+  </PropertyGroup>
+</Project>
